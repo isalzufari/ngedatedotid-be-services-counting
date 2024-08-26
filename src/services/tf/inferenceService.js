@@ -5,7 +5,7 @@ const numClass = labels.length;
 
 const preProcessImage = require('./preProcessImage');
 const renderBoxes = require('./renderBoxes');
-const saveData = require('./extractFrame');
+// const saveData = require('./extractFrame');
 
 const detectObjects = async ({ image, model }) => {
   return new Promise(async (resolve) => {
@@ -65,7 +65,7 @@ const detectObjects = async ({ image, model }) => {
     scores_data.forEach(val => {
       confidence.push((val * 100).toFixed(1));
     });
-    saveData({ count: scores_data.length, base64Image });
+    // saveData({ count: scores_data.length, base64Image });
     resolve({
       image: base64Image,
       counting: scores_data.length,
